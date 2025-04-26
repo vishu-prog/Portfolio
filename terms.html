@@ -20,14 +20,33 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="text-2xl font-bold text-blue-600">DevJourney</div>
-            <nav>
-                <ul class="flex space-x-8 text-gray-700 font-medium text-base">
-                    <li><a href="/index.html" class="hover:text-blue-600 transition">Home</a></li>
-                    <li><a href="/about.html" class="hover:text-blue-600 transition">About</a></li>
-                    <li><a href="/blog-post.html" class="hover:text-blue-600 transition">Blog</a></li>
-                    <li><a href="/contact.html" class="hover:text-blue-600 transition">Contact</a></li>
-                  </ul>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 text-gray-700 font-medium text-base">
+                <a href="/index.html" class="hover:text-blue-600 transition">Home</a>
+                <a href="/about.html" class="hover:text-blue-600 transition">About</a>
+                <a href="/blog-post.html" class="hover:text-blue-600 transition">Blog</a>
+                <a href="/contact.html" class="hover:text-blue-600 transition">Contact</a>
             </nav>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="menu" class="hidden md:hidden bg-white border-t px-6 py-4 space-y-4 text-gray-700 text-lg font-medium">
+            <a href="/index.html" class="block hover:text-blue-600">Home</a>
+            <a href="/about.html" class="block hover:text-blue-600">About</a>
+            <a href="/blog-post.html" class="block hover:text-blue-600">Blog</a>
+            <a href="/contact.html" class="block hover:text-blue-600">Contact</a>
         </div>
     </header>
 
@@ -99,21 +118,31 @@
 
     <!-- Footer -->
     <footer class="bg-blue-100 border-t mt-24">
-        <div
-            class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
-            <p>&copy; 2025 DevJourney. Made with ❤️ and ☕ in India</p>
+        <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
+            <p class="text-center">&copy; 2025 DevJourney. Made with ❤️ and ☕ in India</p>
 
-            <!-- Centered Terms & Privacy -->
-            <div class="flex justify-center space-x-6 mt-4">
+            <div class="flex justify-center space-x-6 mt-4 md:mt-0">
                 <a href="/terms.html" class="hover:text-blue-600">Terms</a>
                 <a href="/privacy.html" class="hover:text-blue-600">Privacy</a>
             </div>
 
-            <div class="flex space-x-4 mt-3 md:mt-4">
-                <!-- GitHub -->
+            <div class="flex justify-center space-x-4 mt-4 md:mt-0">
                 <a href="https://github.com/vishu-prog" class="hover:text-blue-600">GitHub</a>
                 <a href="https://replit.com/@CodexVishu" class="hover:text-blue-600">Replit</a>
                 <a href="https://www.instagram.com/vive._.ksharma/" class="hover:text-blue-600">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toggle mobile menu -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 
